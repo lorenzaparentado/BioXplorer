@@ -15,7 +15,10 @@ import ssl
 import geopy.geocoders
 from geopy.geocoders import Nominatim
 
-openai.api_key = "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"
+with open('api_key.txt', 'r') as file:
+    api_key = file.read().strip()
+  
+openai.api_key = api_key
 if not firebase_admin._apps:
   cred = credentials.Certificate(
       'C:\\Users\\loren\\OneDrive\\Desktop\\BioXplorer\\bioxplorer-firebase-adminsdk-6vcbl-de57cce6b8.json'
